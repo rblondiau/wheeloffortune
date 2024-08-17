@@ -1,5 +1,5 @@
-import Wheel from "../components/Wheel";
 import Image from "next/image";
+import RouletteWheel from "@/components/Wheel";
 
 export default function Home() {
   return (
@@ -8,7 +8,7 @@ export default function Home() {
       <h1 className="text-4xl font-bold mb-8 text-royal-blue-500">
         Snack van Fortuin
       </h1>
-      <Wheel />
+      <RouletteWheel />
     </main>
   );
 }

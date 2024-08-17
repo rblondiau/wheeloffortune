@@ -1,54 +1,34 @@
 "use client";
 
 import React, { useState } from "react";
-import { Wheel } from "react-custom-roulette";
 import confetti from "canvas-confetti";
+import dynamic from "next/dynamic";
 
-const data = [
-  {
-    option: "Bitterballen",
-  },
-  {
-    option: "Frikandel",
-  },
-  {
-    option: "Kroket",
-  },
-  {
-    option: "Bicky Burger",
-  },
-  {
-    option: "Kaaskroket",
-  },
-  {
-    option: "Viandel",
-  },
-  {
-    option: "Loempia",
-  },
-  {
-    option: "Boulet",
-  },
-  {
-    option: "Satekroket",
-  },
-  {
-    option: "Vleeskroket",
-  },
-  {
-    option: "Speciaal",
-  },
-  {
-    option: "Cervela",
-  },
-  {
-    option: "Berenpoot",
-  },
-];
+// Dynamically import Wheel component with SSR disabled
+const Wheel = dynamic(
+  () => import("react-custom-roulette").then((mod) => mod.Wheel),
+  { ssr: false }
+);
 
 const RouletteWheel = () => {
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(0);
+
+  const data = [
+    { option: "Bitterballen" },
+    { option: "Frikandel" },
+    { option: "Kroket" },
+    { option: "Bicky Burger" },
+    { option: "Kaaskroket" },
+    { option: "Viandel" },
+    { option: "Loempia" },
+    { option: "Boulet" },
+    { option: "Satekroket" },
+    { option: "Vleeskroket" },
+    { option: "Speciaal" },
+    { option: "Cervela" },
+    { option: "Berenpoot" },
+  ];
 
   const handleSpinClick = () => {
     const newPrizeNumber = Math.floor(Math.random() * data.length);
