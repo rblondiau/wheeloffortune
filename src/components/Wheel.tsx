@@ -4,11 +4,6 @@ import React, { useState } from "react";
 import { Wheel } from "react-custom-roulette";
 import confetti from "canvas-confetti";
 
-interface PointerProps {
-  src?: string;
-  style?: React.CSSProperties; // Optional
-}
-
 const data = [
   {
     option: "Bitterballen",

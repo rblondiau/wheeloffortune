@@ -1,5 +1,4 @@
 import Wheel from "../components/Wheel";
-import prizes from "../data/prizes.json";
 import Image from "next/image";
 
 export default function Home() {
